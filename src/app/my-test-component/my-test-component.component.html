@@ -1,0 +1,27 @@
+<label>Search
+<input id="search-box"/>
+</label>
+
+<li *ngFor="let country of CountryList">
+  {{country.name}}
+</li>
+
+<hr />
+<h2> Counter: {{currentNumber}}</h2>
+
+<hr />
+<form [formGroup]=CountrySearchForm (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Country Name:
+    <input type="text" formControlName="name">
+    </label>
+  </div>
+  <div>
+    <label>
+      Country Code:
+    <input type="text" formControlName="countrycode">
+    </label>
+  </div>
+  <button class="button" type="submit">Submit</button>
+</form>
